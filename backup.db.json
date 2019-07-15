@@ -1,0 +1,41 @@
+{
+  "catalog": [
+    {
+      "id": "1",
+      "name": "JPA Grundlagen",
+      "tutor": "Rudolf Klassen",
+      "date": "2019-09-01",
+      "description": "Die Teilnehmer lernen die grundlegende JPA-Funktionsweise kennen und sind in der Lage, mittels eines O / R Mappers (Hibernate, EclipseLink, OpenJPA etc.), selbständig eine Java-Anbindung zu einer relationalen Datenbank herzustellen."
+    },
+    {
+      "id": "2",
+      "name": "Docker Advanced",
+      "tutor": "Kevin Krummenauer",
+      "date": "2019-10-21",
+      "description": "Beim Aufsetzen von CI Pipelines und Test- und Produktivumgebungen wird Docker immer mehr zum Standardwerkzeug im Projektalltag. Um möglichst effizient damit arbeiten zu können, soll in dieser Schulung vertiefendes Wissen rund um das Docker Ökosystem vermittelt werden."
+    },
+    {
+      "id": "3",
+      "name": "Node.js",
+      "tutor": "Marian Dubiel",
+      "date": "2019-11-30",
+      "description": "Die Node.js Schulung führt in die Entwicklung serverseitiger Anwendungen ein. Es wird vermittelt, wie mit Node.js eventgesteuert, skalierbar und performant Echtzeitverbindungen zwischen Server und Client umgesetzt und Datenbankanbindungen, sowie REST-basierte Dienste realisiert werden können."
+    }
+  ],
+  "mycourses": [
+    {
+      "id": "1",
+      "name": "JPA Grundlagen",
+      "tutor": "Rudolf Klassen",
+      "date": "2019-09-01",
+      "description": "Die Teilnehmer lernen die grundlegende JPA-Funktionsweise kennen und sind in der Lage, mittels eines O / R Mappers (Hibernate, EclipseLink, OpenJPA etc.), selbständig eine Java-Anbindung zu einer relationalen Datenbank herzustellen."
+    },
+    {
+      "id": "3",
+      "name": "Node.js",
+      "tutor": "Marian Dubiel",
+      "date": "2019-11-30",
+      "description": "Die Node.js Schulung führt in die Entwicklung serverseitiger Anwendungen ein. Es wird vermittelt, wie mit Node.js eventgesteuert, skalierbar und performant Echtzeitverbindungen zwischen Server und Client umgesetzt und Datenbankanbindungen, sowie REST-basierte Dienste realisiert werden können."
+    }
+  ]
+}

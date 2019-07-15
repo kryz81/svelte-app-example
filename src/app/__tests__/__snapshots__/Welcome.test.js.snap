@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome renders component 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col-md-12"
+    >
+      Hello Test User! Welcome in eCampus.
+    </div>
+  </div>
+</div>
+`;
