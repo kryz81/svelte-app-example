@@ -1,21 +1,33 @@
 <script>
-  import { setContext } from "svelte";
-  import { fade } from "svelte/transition";
+  import { onMount, setContext } from 'svelte';
 
-  import Header from "./Header";
-  import Welcome from "./Welcome";
-  import Catalog from "../catalog/Catalog";
-  import MyCoursesContainer from "../mycourses/MyCoursesContainer";
-  import Login from "../login//Login";
+  import Header from './Header';
+  import Welcome from './Welcome';
+  import Catalog from '../catalog/Catalog';
+  import MyCoursesContainer from '../mycourses/MyCoursesContainer';
+  import Login from '../login//Login';
 
-  let theme = "light";
-  setContext("theme", theme);
+  // setting context
+  let theme = 'light';
 
-  const fadeConfig = { duration: 250 };
-  const user = localStorage.getItem("user");
-  let currentRoute = "home";
+  setContext('theme', theme);
 
+  // state
+  const user = localStorage.getItem('user');
+  let currentRoute = 'home';
+  let coursesCount = 0;
+
+  // event listener
   const changeRoute = ({ detail }) => (currentRoute = detail);
+
+  // lifecycle functions
+  onMount(async () => {
+    const res = await fetch('http://localhost:3000/mycourses');
+    const items = await res.json();
+
+    // setting "state"
+    coursesCount = items.length;
+  });
 </script>
 
 <style>
@@ -34,17 +46,11 @@
     <Header on:changeRoute={changeRoute} />
     <hr />
     {#if currentRoute === 'catalog'}
-      <div transition:fade={fadeConfig}>
-        <Catalog />
-      </div>
+      <Catalog />
     {:else if currentRoute === 'mycourses'}
-      <div transition:fade={fadeConfig}>
-        <MyCoursesContainer />
-      </div>
+      <MyCoursesContainer />
     {:else}
-      <div transition:fade={fadeConfig}>
-        <Welcome {user} foo="bar" />
-      </div>
+      <Welcome {user} {coursesCount} foo="bar" />
     {/if}
   {:else}
     <Login />

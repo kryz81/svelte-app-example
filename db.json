@@ -24,13 +24,6 @@
   ],
   "mycourses": [
     {
-      "id": "1",
-      "name": "JPA Grundlagen",
-      "tutor": "Rudolf Svelte",
-      "date": "2019-09-01",
-      "description": "Die Teilnehmer lernen die grundlegende JPA-Funktionsweise kennen und sind in der Lage, mittels eines O / R Mappers (Hibernate, EclipseLink, OpenJPA etc.), selbständig eine Java-Anbindung zu einer relationalen Datenbank herzustellen."
-    },
-    {
       "id": "3",
       "name": "Node.js",
       "tutor": "Tim Integer",

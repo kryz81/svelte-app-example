@@ -1,9 +1,12 @@
 <script>
-  import { getContext } from "svelte";
+  import { getContext } from 'svelte';
 
-  const { theme } = getContext("theme");
+  // consuming context
+  const { theme } = getContext('theme');
 
+  // props
   export let courses = [];
+  export let unsubscribe = () => null;
 </script>
 
 <style>
@@ -27,7 +30,10 @@
             <span class="text-info">{course.tutor}</span>
           </p>
           <p class="card-text">{course.description}</p>
-          <button type="button" class="btn btn-danger btn-sm">
+          <button
+            on:click={() => unsubscribe(course.id)}
+            type="button"
+            class="btn btn-danger btn-sm">
             Unsubscribe
           </button>
         </div>

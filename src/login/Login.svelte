@@ -1,12 +1,12 @@
 <script>
   // imports
-  import { login } from "../auth/auth";
+  import { login } from '../auth/auth';
 
   // state
-  let username = "";
-  let password = "";
+  let username = '';
+  let password = '';
   let submitted = false;
-  const errMsg = "Invalid username/password";
+  const errMsg = 'Invalid username/password';
 
   // actions
   const submit = () => {
@@ -20,7 +20,7 @@
   const reset = () => (submitted = false);
 
   // computed
-  $: err = submitted && (username !== "Kryz" || password !== "12345");
+  $: err = submitted && (username !== 'Kryz' || password !== '12345');
 </script>
 
 <div class="row">

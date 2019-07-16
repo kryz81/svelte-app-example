@@ -1,10 +1,12 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import Logo from "./logo.png";
-  import { logout } from "../auth/auth";
+  import { createEventDispatcher } from 'svelte';
 
+  import Logo from './logo.png';
+  import { logout } from '../auth/auth';
+
+  // dispatching an event
   const dispatch = createEventDispatcher();
-  const setRoute = name => () => dispatch("changeRoute", name);
+  const setRoute = name => () => dispatch('changeRoute', name);
 </script>
 
 <style>

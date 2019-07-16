@@ -1,5 +1,5 @@
-import App from "./app/App";
+import App from './app/App';
 
 const app = new App({
-  target: document.getElementById("root")
+  target: document.getElementById('root'),
 });

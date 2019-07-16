@@ -1,15 +1,29 @@
 <script>
-  import { onMount } from "svelte";
-  import MyCoursesList from "./MyCoursesList";
+  import { onMount } from 'svelte';
 
-  let mycourses = [];
+  import MyCoursesList from './MyCoursesList';
+
+  // state
+  let courses = [];
   let loading = false;
 
-  // lifecycle methods
+  // actions
+  const unsubscribe = async courseId => {
+    try {
+      await fetch(`http://localhost:3000/mycourses/${courseId}`, {
+        method: 'DELETE',
+      });
+      courses = courses.filter(({ id }) => id !== courseId);
+    } catch (e) {
+      alert(`Cannot unsubscribe: ${e.message}`);
+    }
+  };
+
+  // lifecycle
   onMount(async () => {
     loading = true;
-    const res = await fetch("http://localhost:3000/mycourses");
-    mycourses = await res.json();
+    const res = await fetch('http://localhost:3000/mycourses');
+    courses = await res.json();
     loading = false;
   });
 </script>
@@ -28,6 +42,6 @@
         <i class="fas fa-spinner fa-pulse" />
       </div>
     {/if}
-    <MyCoursesList courses={mycourses} />
+    <MyCoursesList {courses} {unsubscribe} />
   </div>
 </div>
